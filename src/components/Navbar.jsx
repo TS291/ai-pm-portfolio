@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Sun, Moon, Menu, X } from 'lucide-react'
+import { personal } from '../data/portfolio'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -40,7 +41,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
           className="font-display font-semibold text-lg tracking-tight"
           style={{ color: 'var(--color-ink)' }}
         >
-          Alex Morgan
+          {personal.name}
         </Link>
 
         {/* Desktop nav */}

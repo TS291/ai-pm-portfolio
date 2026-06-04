@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Linkedin, Mail, Github } from 'lucide-react'
+import { personal } from '../data/portfolio'
 
 export default function Footer() {
   return (
@@ -11,10 +12,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
             <p className="font-display font-semibold text-lg" style={{ color: 'var(--color-ink)' }}>
-              Alex Morgan
+              {personal.name}
             </p>
             <p className="text-sm mt-1" style={{ color: 'var(--color-muted)' }}>
-              Senior Product Manager · AI Products
+              {personal.title}
             </p>
           </div>
 
@@ -28,7 +29,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://linkedin.com/in/alexmorgan"
+              href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full transition-colors duration-200"
@@ -38,30 +39,32 @@ export default function Footer() {
               <Linkedin size={18} />
             </a>
             <a
-              href="mailto:alex@example.com"
+              href={`mailto:${personal.email}`}
               className="p-2 rounded-full transition-colors duration-200"
               style={{ color: 'var(--color-muted)' }}
               aria-label="Email"
             >
               <Mail size={18} />
             </a>
-            <a
-              href="https://github.com/alexmorgan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full transition-colors duration-200"
-              style={{ color: 'var(--color-muted)' }}
-              aria-label="GitHub"
-            >
-              <Github size={18} />
-            </a>
+            {personal.github && (
+              <a
+                href={personal.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full transition-colors duration-200"
+                style={{ color: 'var(--color-muted)' }}
+                aria-label="GitHub"
+              >
+                <Github size={18} />
+              </a>
+            )}
           </div>
         </div>
 
         <div className="divider my-8" />
 
         <p className="text-xs text-center" style={{ color: 'var(--color-muted)' }}>
-          © {new Date().getFullYear()} Alex Morgan. Built with precision and care.
+          © {new Date().getFullYear()} {personal.name}. Built with precision and care.
         </p>
       </div>
     </footer>
