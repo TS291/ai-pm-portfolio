@@ -35,7 +35,7 @@ export default function Resume() {
         <AnimatedSection>
           <div className="mb-12">
             <p className="text-base leading-relaxed" style={{ color: 'var(--color-muted)' }}>
-              Senior Product Manager with {`8+`} years of experience building AI products, marketplaces, SaaS platforms, and enterprise software. Track record of zero-to-one product development, scaled execution, and measurable business impact. Deep experience in AI/ML product strategy, user research, and cross-functional leadership.
+              Senior Product Manager with 4+ years of experience shipping AI-powered products across payments platforms, enterprise SaaS, and GenAI developer tooling. Track record of zero-to-one product development, scaled execution, and measurable business impact — including $9M+ projected annual impact and a 31% engagement lift through AI personalization. Deep expertise in LLM product design, agentic AI systems, payment processor integrations, and cross-functional leadership.
             </p>
           </div>
         </AnimatedSection>

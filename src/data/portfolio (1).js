@@ -10,7 +10,7 @@ export const personal = {
     'I lead AI product strategy, experimentation, and execution across payments platforms, enterprise SaaS, and GenAI developer tooling — from zero-to-one bets to scaled platforms serving 140,000+ users.',
   location: 'Sunnyvale, CA',
   email: 'tishyasriv@gmail.com',
-  linkedin: 'https://linkedin.com/in/tishyasriv',
+  linkedin: 'https://www.linkedin.com/in/tishyasriv/',
   github: '',
   resumeUrl: '/resume.pdf', // Place your resume PDF in /public/resume.pdf
 }
@@ -88,6 +88,61 @@ export const education = [
 ]
 
 export const caseStudies = [
+  {
+    slug: 'ai-intake-agent',
+    title: 'AI Intake Agent for Payments 2.0',
+    subtitle: "Designing a multi-component agentic AI system to transform unstructured requests into structured roadmap decisions — accelerating Intuit\'s Payments platform modernization",
+    tags: ['Agentic AI', 'Payments', 'Enterprise'],
+    duration: 'Ongoing',
+    role: 'Lead PM',
+    outcome: 'Eliminated #1 operational bottleneck · $9M+ projected impact',
+    coverColor: '#F0F9FF',
+    accentColor: '#0369A1',
+    problem:
+      "Intuit\'s Payments 2.0 modernization program was being slowed by a broken intake and prioritization process. Teams submitted requests across Slack, Jira, and email — no two submissions looked alike. Some contained detailed requirements and revenue impact; others had only a single vague line. Engineering leaders spent significant time manually triaging incomplete work, leading to long intake-to-decision cycles, inconsistent prioritization, and delayed execution on revenue-critical processor integrations.",
+    research: {
+      summary:
+        'Before proposing any AI solution, I mapped the end-to-end intake workflow by shadowing PMs and Engineering Managers during review sessions. I conducted stakeholder interviews across engineering, risk, and business teams, and asked each reviewer: "What questions do you ask before making a roadmap decision?" The answers were surprisingly consistent — and that consistency became the foundation of the agent.',
+      insights: [
+        'Nearly every request was missing at least one of: business justification, revenue impact, technical dependencies, risk assessment, or customer impact — forcing repeated clarification cycles',
+        'Manual categorization (platform vs. infrastructure vs. compliance vs. processor work) required experienced reviewers and created a single-threaded bottleneck',
+        'Prioritization was inconsistent: engineering optimized for technical debt, business for revenue, risk for compliance — no shared framework existed',
+        "The bottleneck was not documentation quality — it was decision-making. A better form would not solve it; an agent that could reason through requests would.",
+      ],
+    },
+    strategy:
+      'I defined the product vision as: "An AI Intake Agent that behaves like an experienced Product Operations Manager." Rather than automating form-filling, I designed a multi-component agentic system that understood requests, detected gaps, asked targeted clarifying questions, generated structured PRDs, identified dependencies, scored priority, and routed work — while keeping humans in the loop for final approval. I chose an agentic architecture over simpler alternatives because the bottleneck was downstream decision-making, not upstream documentation.',
+    architecture:
+      'Multi-agent pipeline with five specialized components: (1) Context Retrieval Agent — RAG over Confluence, PRDs, architecture docs, Jira tickets, and processor requirements to ground the LLM in company-specific knowledge. (2) Requirement Completeness Agent — scores submissions against a required-field rubric and sends targeted clarification questions only for critical gaps. (3) PRD Generation Agent — produces structured outputs: problem statement, user impact, business impact, dependencies, risks, success metrics. (4) Dependency Analysis Agent — uses architecture metadata and retrieval evidence (not pure LLM reasoning) to surface downstream teams and compliance requirements. (5) Prioritization Agent — applies a scoring formula (Business Impact + Revenue Impact + Strategic Alignment + Risk Reduction minus Engineering Effort) with LLM-generated reasoning for full transparency.',
+    userFlow: [
+      'Stakeholder submits intake request via any channel',
+      'Context Retrieval Agent pulls relevant prior work, architecture docs, and roadmap context via RAG',
+      'Completeness Agent scores submission and sends clarifying questions only for critical missing fields',
+      'PRD Generation Agent produces a standardized, structured summary once information is complete',
+      'Dependency Analysis Agent flags downstream teams, compliance requirements, and integration risks',
+      'Prioritization Agent generates a scored recommendation with full evidence and reasoning breakdown',
+      'PM reviews recommendation and approves or overrides — humans retain final decision authority',
+      'Approved request enters roadmap decision cycle fully structured and decision-ready',
+    ],
+    metrics: [
+      { label: 'Projected business impact', value: '$9M+' },
+      { label: 'Top operational bottleneck', value: 'Eliminated' },
+      { label: 'Intake-to-decision cycle', value: 'Significantly reduced' },
+      { label: 'Requirement completeness', value: 'Materially improved' },
+    ],
+    experiments: [
+      { name: 'Phase 1 — PRD generation only', hypothesis: 'Proving quality improvement before adding complexity builds stakeholder trust', result: 'Validated quality gains and built trust before adding triage and prioritization layers' },
+      { name: 'Clarification loop threshold', hypothesis: 'Asking only for critical gaps reduces user frustration without sacrificing quality', result: 'Confidence threshold approach resolved over-automation friction; completion rates improved significantly' },
+      { name: 'Prioritization transparency', hypothesis: 'Showing scoring breakdown and evidence sources increases trust in agent recommendations', result: 'Trust improved dramatically once every recommendation included evidence used, scoring breakdown, and confidence level' },
+      { name: 'Dependency detection method', hypothesis: 'Retrieval-based detection beats pure LLM reasoning for accuracy', result: 'Moving to architecture metadata + retrieval eliminated hallucinated dependencies present in early versions' },
+    ],
+    lessons: [
+      'The hardest part of building AI agents is not the model — it is understanding how experts make decisions, which decisions to automate, which require human oversight, and what data the agent needs to reason correctly',
+      'The breakthrough came when I stopped thinking "adding AI" and started thinking "replicating the workflow of an experienced Product Operations Manager" — that mindset changed the entire architecture',
+      'Human-in-the-loop design was not a compromise — it was a trust accelerator. Agents that recommend and humans that approve outperform fully automated systems on adoption in enterprise environments',
+      'Hallucination in dependency detection was the highest-stakes failure mode — moving from LLM reasoning to retrieval-grounded evidence was the most important technical product decision I made',
+    ],
+  },
   {
     slug: 'llm-intake-workflow',
     title: 'LLM-Assisted Intake Workflow',
