@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom'
-import { Linkedin, Mail, Github } from 'lucide-react'
+import { Linkedin, Mail } from 'lucide-react'
 import { personal } from '../data/portfolio'
 
 export default function Footer() {
   return (
-    <footer
-      className="border-t mt-32"
-      style={{ borderColor: 'var(--color-border)' }}
-    >
+    <footer className="border-t mt-32" style={{ borderColor: 'var(--color-border)' }}>
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
@@ -22,7 +19,6 @@ export default function Footer() {
           <div className="flex flex-wrap gap-6 text-sm" style={{ color: 'var(--color-muted)' }}>
             <Link to="/about" className="hover:opacity-100 transition-opacity" style={{ opacity: 0.7 }}>About</Link>
             <Link to="/case-studies" className="hover:opacity-100 transition-opacity" style={{ opacity: 0.7 }}>Case Studies</Link>
-            <Link to="/thinking" className="hover:opacity-100 transition-opacity" style={{ opacity: 0.7 }}>Thinking</Link>
             <Link to="/resume" className="hover:opacity-100 transition-opacity" style={{ opacity: 0.7 }}>Resume</Link>
             <Link to="/contact" className="hover:opacity-100 transition-opacity" style={{ opacity: 0.7 }}>Contact</Link>
           </div>
@@ -46,18 +42,6 @@ export default function Footer() {
             >
               <Mail size={18} />
             </a>
-            {personal.github && (
-              <a
-                href={personal.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full transition-colors duration-200"
-                style={{ color: 'var(--color-muted)' }}
-                aria-label="GitHub"
-              >
-                <Github size={18} />
-              </a>
-            )}
           </div>
         </div>
 

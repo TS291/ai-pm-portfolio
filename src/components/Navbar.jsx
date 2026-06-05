@@ -7,7 +7,6 @@ const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/case-studies', label: 'Case Studies' },
-  { to: '/thinking', label: 'Thinking' },
   { to: '/resume', label: 'Resume' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -25,9 +24,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'backdrop-blur-md border-b'
-          : ''
+        scrolled ? 'backdrop-blur-md border-b' : ''
       }`}
       style={{
         backgroundColor: scrolled ? 'color-mix(in srgb, var(--color-bg) 90%, transparent)' : 'transparent',
@@ -35,7 +32,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
       }}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
         <Link
           to="/"
           className="font-display font-semibold text-lg tracking-tight"
@@ -44,23 +40,19 @@ export default function Navbar({ darkMode, setDarkMode }) {
           {personal.name}
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-7">
           {navLinks.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'active' : ''}`
-              }
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
             >
               {label}
             </NavLink>
           ))}
         </div>
 
-        {/* Right controls */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => setDarkMode(!darkMode)}
@@ -70,8 +62,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
           >
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-
-          {/* Mobile menu button */}
           <button
             className="md:hidden p-2 rounded-full"
             style={{ color: 'var(--color-muted)' }}
@@ -83,23 +73,17 @@ export default function Navbar({ darkMode, setDarkMode }) {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div
           className="md:hidden border-t px-6 py-4 flex flex-col gap-4"
-          style={{
-            backgroundColor: 'var(--color-bg)',
-            borderColor: 'var(--color-border)',
-          }}
+          style={{ backgroundColor: 'var(--color-bg)', borderColor: 'var(--color-border)' }}
         >
           {navLinks.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
-              className={({ isActive }) =>
-                `nav-link text-base py-1 ${isActive ? 'active' : ''}`
-              }
+              className={({ isActive }) => `nav-link text-base py-1 ${isActive ? 'active' : ''}`}
               onClick={() => setMobileOpen(false)}
             >
               {label}

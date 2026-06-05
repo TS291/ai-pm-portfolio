@@ -6,7 +6,6 @@ import Home from './pages/Home'
 import About from './pages/About'
 import CaseStudies from './pages/CaseStudies'
 import CaseStudyDetail from './pages/CaseStudyDetail'
-import Thinking from './pages/Thinking'
 import Resume from './pages/Resume'
 import Contact from './pages/Contact'
 
@@ -27,7 +26,6 @@ function AppContent({ darkMode, setDarkMode }) {
           <Route path="/about" element={<About />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
-          <Route path="/thinking" element={<Thinking />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

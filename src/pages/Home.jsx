@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Download, Mail, Sparkles, ChevronRight } from 'lucide-react'
-import { personal, stats, caseStudies, articles } from '../data/portfolio'
+import { personal, stats, caseStudies } from '../data/portfolio'
 import { AnimatedSection } from '../components/AnimatedSection'
 
 export default function Home() {
@@ -8,7 +8,6 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-        {/* Subtle gradient background */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -67,11 +66,7 @@ export default function Home() {
               View Case Studies
               <ArrowRight size={16} />
             </Link>
-            <a
-              href={personal.resumeUrl}
-              download
-              className="btn-secondary"
-            >
+            <a href={personal.resumeUrl} download className="btn-secondary">
               <Download size={16} />
               Download Resume
             </a>
@@ -100,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Studies Preview */}
+      {/* Case Studies */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <AnimatedSection>
           <div className="flex items-end justify-between mb-12">
@@ -147,7 +142,7 @@ export default function Home() {
                   {cs.subtitle}
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {cs.tags.map((tag) => (
                       <span
                         key={tag}
@@ -162,7 +157,7 @@ export default function Home() {
                     ))}
                   </div>
                   <span
-                    className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-200"
+                    className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0 ml-4"
                     style={{ color: 'var(--color-accent)' }}
                   >
                     Read →
@@ -177,68 +172,6 @@ export default function Home() {
           <Link to="/case-studies" className="btn-secondary">
             View all case studies
           </Link>
-        </div>
-      </section>
-
-      {/* Thinking Preview */}
-      <section
-        className="py-24"
-        style={{ backgroundColor: 'var(--color-accent-bg)' }}
-      >
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection>
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <p className="section-label mb-3">Writing</p>
-                <h2
-                  className="font-display font-bold text-4xl md:text-5xl"
-                  style={{ color: 'var(--color-ink)' }}
-                >
-                  AI Product Thinking
-                </h2>
-              </div>
-              <Link
-                to="/thinking"
-                className="hidden md:inline-flex items-center gap-2 text-sm font-medium"
-                style={{ color: 'var(--color-accent)' }}
-              >
-                View all
-                <ChevronRight size={16} />
-              </Link>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-3 gap-5">
-            {articles.slice(0, 3).map((article, i) => (
-              <AnimatedSection key={article.slug} delay={i * 80}>
-                <div
-                  className="card p-6 h-full"
-                  style={{ backgroundColor: 'var(--color-bg)' }}
-                >
-                  <div className="flex gap-2 mb-4">
-                    {article.tags.map((tag) => (
-                      <span key={tag} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                  <h3
-                    className="font-display font-semibold text-lg mb-3 leading-snug"
-                    style={{ color: 'var(--color-ink)' }}
-                  >
-                    {article.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed mb-4"
-                    style={{ color: 'var(--color-muted)' }}
-                  >
-                    {article.excerpt}
-                  </p>
-                  <p className="text-xs" style={{ color: 'var(--color-muted)' }}>
-                    {article.date} · {article.readTime}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -258,7 +191,7 @@ export default function Home() {
               Open to the right opportunity
             </h2>
             <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              I'm selective about what I build next. If you're working on something ambitious in AI, let's talk.
+              I'm selective about what I build next. If you're working on something ambitious in AI, fintech, or enterprise software, let's talk.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

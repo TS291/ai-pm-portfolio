@@ -4,20 +4,20 @@ import { MapPin, Briefcase, GraduationCap, CheckCircle } from 'lucide-react'
 
 const philosophy = [
   {
-    title: 'Start with the problem, not the technology',
-    body: 'AI is a powerful tool, not a strategy. The best AI products I\'ve built began with a deep, uncomfortable understanding of a real problem — not a model I wanted to use.',
+    title: 'Start with the bottleneck, not the technology',
+    body: 'Before proposing AI, I map the workflow end-to-end and ask where time is actually being lost. The best AI products I\'ve built solved a decision-making bottleneck — not a documentation problem.',
   },
   {
     title: 'Trust is the product',
-    body: 'In AI, the model accuracy is table stakes. The real product is the trust architecture: explainability, graceful failures, and giving users control. Without trust, adoption dies.',
+    body: 'In enterprise AI, accuracy is table stakes. The real product is the trust architecture: explainability, evidence-grounded outputs, and human-in-the-loop controls. Without trust, adoption dies regardless of model quality.',
   },
   {
-    title: 'Ship narrow and deep, not broad and shallow',
-    body: 'A focused AI feature that does one thing brilliantly competes on a different dimension than a fragmented tool that does ten things adequately. I bias toward depth.',
+    title: 'Personalization only works on top of good data',
+    body: 'Driving a 31% engagement lift taught me that AI personalization without clean underlying data architecture is just noise. I invest in data quality and instrumentation before building the intelligence layer.',
   },
   {
     title: 'The best insight comes from watching, not asking',
-    body: 'Users tell you what they want; behavior shows you what they need. I invest heavily in observation, diary studies, and contextual inquiry before writing a single requirement.',
+    body: 'Stakeholders tell you what they want; behavior reveals what they need. I shadow workflows, run diary studies, and do contextual inquiry before writing a single requirement.',
   },
 ]
 
@@ -42,27 +42,30 @@ export default function About() {
           <AnimatedSection>
             <div className="space-y-5 text-base leading-relaxed" style={{ color: 'var(--color-muted)' }}>
               <p>
-                I'm a Senior Product Manager with {`8+`} years of experience building products at the intersection of AI, marketplaces, and enterprise software. I've shipped zero-to-one AI products, scaled platforms to millions of users, and led cross-functional teams at high-growth startups and established companies.
+                I'm a Senior Product Manager at Intuit with 4+ years of experience shipping AI-powered products across payments platforms, enterprise SaaS, and GenAI developer tooling. I specialize in the full product lifecycle — from early discovery and user research to go-to-market strategy and scaled iteration.
               </p>
               <p>
-                My work spans the full product lifecycle — from early discovery and user research to go-to-market and scaled iteration. I'm known for making hard technical tradeoffs legible to business stakeholders, and for translating messy user needs into precise product specifications.
+                At Intuit's Payments Platform, I own a portfolio of 3 strategic AI initiatives — including an LLM-assisted intake agent, developer documentation modernization, and direct processor integrations with Chase and AMEX — projected to unlock $9M+ in annual business impact.
               </p>
               <p>
-                Before product management, I studied Computer Science and Business at UC Berkeley, which gave me the technical depth to work alongside engineering teams as a genuine partner — not just a translator.
+                I also led the consolidation of 4+ legacy enterprise systems into a unified AI-personalized platform serving 17,000 global users, driving a 31% engagement lift and a 15% improvement in user satisfaction. I own the scalability roadmap for Intuit Academy, which powers 140,000+ expert learners across TurboTax Live and QuickBooks Live.
               </p>
               <p>
-                I care deeply about AI products that earn user trust through transparency, and about building teams where great ideas can come from anywhere.
+                Before Intuit, I founded MEMRY — an AI-assisted caregiver engagement app for Alzheimer's patients — winning Dartmouth's 2022 "The Pitch" competition (1st of 120 teams) and securing $13K in seed and grant funding. I hold a Master of Engineering Management from Dartmouth's Thayer School of Engineering and Tuck School of Business, and a B.Tech from the Institute of Chemical Technology, Mumbai (GPA 9.71/10, Rank #3 in the university).
+              </p>
+              <p>
+                I care deeply about AI products that earn user trust through transparency, and about teams where rigorous user research drives every major product decision.
               </p>
             </div>
 
             <div className="mt-10 space-y-3">
               <div className="flex items-center gap-3 text-sm" style={{ color: 'var(--color-muted)' }}>
                 <MapPin size={15} style={{ color: 'var(--color-accent)' }} />
-                {personal.location}
+                {personal.location} · Permanent Resident — no sponsorship required
               </div>
               <div className="flex items-center gap-3 text-sm" style={{ color: 'var(--color-muted)' }}>
                 <Briefcase size={15} style={{ color: 'var(--color-accent)' }} />
-                Open to senior IC and staff PM roles
+                Targeting Staff / Senior AI PM roles in fintech, payments, and enterprise AI
               </div>
             </div>
           </AnimatedSection>
@@ -94,10 +97,10 @@ export default function About() {
               style={{ border: '1px solid var(--color-border)' }}
             >
               <p className="text-sm font-medium mb-4" style={{ color: 'var(--color-ink)' }}>
-                Companies & Contexts
+                Domains & Contexts
               </p>
               <div className="flex flex-wrap gap-2">
-                {['AI Startups', 'Enterprise SaaS', 'B2B Marketplaces', 'Consumer Apps', 'Developer Tools', 'Fintech', 'Logistics Tech'].map((tag) => (
+                {['Payments & FinTech', 'Enterprise SaaS', 'GenAI Tooling', 'AI Personalization', 'Developer Platforms', 'Consumer AI', '0→1 Products'].map((tag) => (
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
@@ -207,7 +210,7 @@ export default function About() {
           </AnimatedSection>
           <div className="space-y-8 max-w-3xl">
             {experience.map((role, i) => (
-              <AnimatedSection key={role.company} delay={i * 80}>
+              <AnimatedSection key={`${role.company}-${i}`} delay={i * 80}>
                 <div
                   className="flex gap-6 p-6 rounded-2xl"
                   style={{ border: '1px solid var(--color-border)' }}
@@ -220,23 +223,14 @@ export default function About() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-                      <h3
-                        className="font-semibold"
-                        style={{ color: 'var(--color-ink)' }}
-                      >
+                      <h3 className="font-semibold" style={{ color: 'var(--color-ink)' }}>
                         {role.role}
                       </h3>
-                      <span
-                        className="text-xs font-mono"
-                        style={{ color: 'var(--color-muted)' }}
-                      >
+                      <span className="text-xs font-mono" style={{ color: 'var(--color-muted)' }}>
                         {role.period}
                       </span>
                     </div>
-                    <p
-                      className="text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-accent)' }}
-                    >
+                    <p className="text-sm font-medium mb-2" style={{ color: 'var(--color-accent)' }}>
                       {role.company}
                     </p>
                     <p className="text-sm leading-relaxed" style={{ color: 'var(--color-muted)' }}>
@@ -247,7 +241,7 @@ export default function About() {
               </AnimatedSection>
             ))}
 
-            {education.map((edu) => (
+            {education.map((edu, i) => (
               <AnimatedSection key={edu.school}>
                 <div
                   className="flex gap-6 p-6 rounded-2xl"
@@ -271,6 +265,11 @@ export default function About() {
                     <p className="text-sm" style={{ color: 'var(--color-accent)' }}>
                       {edu.school}
                     </p>
+                    {edu.note && (
+                      <p className="text-xs mt-1" style={{ color: 'var(--color-muted)' }}>
+                        {edu.note}
+                      </p>
+                    )}
                   </div>
                 </div>
               </AnimatedSection>
