@@ -143,6 +143,56 @@ export const caseStudies = [
       'Hallucination in dependency detection was the highest-stakes failure mode — moving from LLM reasoning to retrieval-grounded evidence was the most important technical product decision I made',
     ],
   },
+   {
+    slug: 'memry-alzheimers-app',
+    title: 'MEMRY — AI Caregiver Engagement App',
+    subtitle: 'Building a zero-to-one AI-assisted mobile app for Alzheimer\'s caregivers — from discovery to launch to $13K in funding',
+    tags: ['AI/ML', 'Consumer', '0→1'],
+    duration: '2 years',
+    role: 'Founder & Product Lead',
+    outcome: '$13K seed funding · 1st place, Dartmouth Pitch Competition',
+    coverColor: '#FDF4FF',
+    accentColor: '#9333EA',
+    problem:
+      'Alzheimer\'s caregivers — often family members with no clinical training — face profound isolation, inconsistent guidance, and a lack of tools designed specifically for their day-to-day emotional and logistical challenges. Existing apps were either too clinical or too generic to be genuinely useful. https://engineering.dartmouth.edu/news/mem-student-wins-prize-to-develop-app-for-alzheimers-patients-and-caregivers',
+    research: {
+      summary:
+        'Conducted primary research with caregivers and clinical experts. Ran discovery interviews with 20+ caregivers across different stages of the caregiving journey. Partnered with Alzheimer\'s care specialists to validate the product hypothesis and ensure clinical integrity.',
+      insights: [
+        'Caregivers felt invisible — tools were built for patients, not the people caring for them',
+        'Emotional regulation and daily structure were the two highest-need areas',
+        'Caregivers distrusted generic advice — they needed guidance specific to disease stage and relationship type',
+        'Low-tech caregivers were the majority; any AI layer needed to feel effortless, not clinical',
+      ],
+    },
+    strategy:
+      'Build for the caregiver, not the patient. Focus on daily emotional support and practical engagement activities personalized to the patient\'s cognitive stage. Use AI to generate activity recommendations that feel human and specific — not algorithmic. Start narrow, prove value, then expand.',
+    architecture:
+      'Mobile-first app with AI-powered activity recommendation engine. Personalization based on patient cognitive stage, caregiver relationship type, and engagement history. Simple, accessible UI designed for low-tech users. Backend built for rapid iteration during early discovery phase.',
+    userFlow: [
+      'Caregiver creates profile for themselves and their loved one',
+      'Inputs patient cognitive stage and daily routine context',
+      'AI generates personalized activity recommendations for the day',
+      'Caregiver selects, adapts, and logs engagement activities',
+      'App surfaces emotional check-ins and caregiver support resources',
+    ],
+    metrics: [
+      { label: 'Seed & grant funding secured', value: '$13,000' },
+      { label: 'Pitch competition result', value: '1st of 120 teams' },
+      { label: 'User research sessions', value: '20+ caregivers' },
+      { label: 'Clinical advisors engaged', value: 'Multiple experts' },
+    ],
+    experiments: [
+      { name: 'Activity recommendation format', hypothesis: 'Specific, stage-appropriate activities beat generic suggestions', result: 'Specific recommendations: significantly higher caregiver intent to use' },
+      { name: 'Emotional check-in timing', hypothesis: 'Morning check-ins drive more engagement than evening', result: 'Morning: higher completion; evening: higher reflection quality' },
+      { name: 'Onboarding depth', hypothesis: 'Detailed onboarding produces better recommendations', result: 'More context = better AI output, but drop-off increased; found optimal balance at 5 questions' },
+    ],
+    lessons: [
+      'Zero-to-one in a sensitive health domain requires earning trust before earning engagement — clinical credibility was a prerequisite for user adoption',
+      'The AI layer was only as good as the context it had; onboarding design was the most critical product decision',
+      'Winning the pitch competition validated the market problem, not just the solution — the judges responded to the depth of the user research',
+    ],
+  },
   {
     slug: 'llm-intake-workflow',
     title: 'LLM-Assisted Intake Workflow',
@@ -292,56 +342,6 @@ export const caseStudies = [
       'External partner dependencies require a different kind of PM muscle — relationship management and external stakeholder alignment are as important as internal execution',
       'Payments infrastructure work has low glamour and high leverage — the compounding reliability benefits are easy to undervalue until something breaks',
       'Treating processor integration as a platform capability (not a project) changed how engineering estimated and prioritized the work',
-    ],
-  },
-  {
-    slug: 'memry-alzheimers-app',
-    title: 'MEMRY — AI Caregiver Engagement App',
-    subtitle: 'Building a zero-to-one AI-assisted mobile app for Alzheimer\'s caregivers — from discovery to launch to $13K in funding',
-    tags: ['AI/ML', 'Consumer', '0→1'],
-    duration: '2 years',
-    role: 'Founder & Product Lead',
-    outcome: '$13K seed funding · 1st place, Dartmouth Pitch Competition',
-    coverColor: '#FDF4FF',
-    accentColor: '#9333EA',
-    problem:
-      'Alzheimer\'s caregivers — often family members with no clinical training — face profound isolation, inconsistent guidance, and a lack of tools designed specifically for their day-to-day emotional and logistical challenges. Existing apps were either too clinical or too generic to be genuinely useful.',
-    research: {
-      summary:
-        'Conducted primary research with caregivers and clinical experts. Ran discovery interviews with 20+ caregivers across different stages of the caregiving journey. Partnered with Alzheimer\'s care specialists to validate the product hypothesis and ensure clinical integrity.',
-      insights: [
-        'Caregivers felt invisible — tools were built for patients, not the people caring for them',
-        'Emotional regulation and daily structure were the two highest-need areas',
-        'Caregivers distrusted generic advice — they needed guidance specific to disease stage and relationship type',
-        'Low-tech caregivers were the majority; any AI layer needed to feel effortless, not clinical',
-      ],
-    },
-    strategy:
-      'Build for the caregiver, not the patient. Focus on daily emotional support and practical engagement activities personalized to the patient\'s cognitive stage. Use AI to generate activity recommendations that feel human and specific — not algorithmic. Start narrow, prove value, then expand.',
-    architecture:
-      'Mobile-first app with AI-powered activity recommendation engine. Personalization based on patient cognitive stage, caregiver relationship type, and engagement history. Simple, accessible UI designed for low-tech users. Backend built for rapid iteration during early discovery phase.',
-    userFlow: [
-      'Caregiver creates profile for themselves and their loved one',
-      'Inputs patient cognitive stage and daily routine context',
-      'AI generates personalized activity recommendations for the day',
-      'Caregiver selects, adapts, and logs engagement activities',
-      'App surfaces emotional check-ins and caregiver support resources',
-    ],
-    metrics: [
-      { label: 'Seed & grant funding secured', value: '$13,000' },
-      { label: 'Pitch competition result', value: '1st of 120 teams' },
-      { label: 'User research sessions', value: '20+ caregivers' },
-      { label: 'Clinical advisors engaged', value: 'Multiple experts' },
-    ],
-    experiments: [
-      { name: 'Activity recommendation format', hypothesis: 'Specific, stage-appropriate activities beat generic suggestions', result: 'Specific recommendations: significantly higher caregiver intent to use' },
-      { name: 'Emotional check-in timing', hypothesis: 'Morning check-ins drive more engagement than evening', result: 'Morning: higher completion; evening: higher reflection quality' },
-      { name: 'Onboarding depth', hypothesis: 'Detailed onboarding produces better recommendations', result: 'More context = better AI output, but drop-off increased; found optimal balance at 5 questions' },
-    ],
-    lessons: [
-      'Zero-to-one in a sensitive health domain requires earning trust before earning engagement — clinical credibility was a prerequisite for user adoption',
-      'The AI layer was only as good as the context it had; onboarding design was the most critical product decision',
-      'Winning the pitch competition validated the market problem, not just the solution — the judges responded to the depth of the user research',
     ],
   },
 ]
